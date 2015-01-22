@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E4BD9BAF1A70D83E009ABC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BAE1A70D83E009ABC00 /* AppDelegate.swift */; };
-		E4BD9BB11A70D83E009ABC00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BB01A70D83E009ABC00 /* ViewController.swift */; };
 		E4BD9BB41A70D83E009ABC00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9BB21A70D83E009ABC00 /* Main.storyboard */; };
 		E4BD9BB61A70D83E009ABC00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9BB51A70D83E009ABC00 /* Images.xcassets */; };
 		E4BD9BB91A70D83E009ABC00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9BB71A70D83E009ABC00 /* LaunchScreen.xib */; };
 		E4BD9BC51A70D83E009ABC00 /* FoodPinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BC41A70D83E009ABC00 /* FoodPinTests.swift */; };
+		E4BD9BCF1A70D99C009ABC00 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BCE1A70D99C009ABC00 /* RestaurantTableViewController.swift */; };
+		E4BD9BD11A70E447009ABC00 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BD01A70E447009ABC00 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		E4BD9BA91A70D83E009ABC00 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BD9BAD1A70D83E009ABC00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BD9BAE1A70D83E009ABC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4BD9BB01A70D83E009ABC00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E4BD9BB31A70D83E009ABC00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4BD9BB51A70D83E009ABC00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4BD9BB81A70D83E009ABC00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E4BD9BBE1A70D83E009ABC00 /* FoodPinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodPinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BD9BC31A70D83E009ABC00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BD9BC41A70D83E009ABC00 /* FoodPinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinTests.swift; sourceTree = "<group>"; };
+		E4BD9BCE1A70D99C009ABC00 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		E4BD9BD01A70E447009ABC00 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +80,11 @@
 			isa = PBXGroup;
 			children = (
 				E4BD9BAE1A70D83E009ABC00 /* AppDelegate.swift */,
-				E4BD9BB01A70D83E009ABC00 /* ViewController.swift */,
+				E4BD9BCE1A70D99C009ABC00 /* RestaurantTableViewController.swift */,
+				E4BD9BD01A70E447009ABC00 /* CustomTableViewCell.swift */,
 				E4BD9BB21A70D83E009ABC00 /* Main.storyboard */,
-				E4BD9BB51A70D83E009ABC00 /* Images.xcassets */,
 				E4BD9BB71A70D83E009ABC00 /* LaunchScreen.xib */,
+				E4BD9BB51A70D83E009ABC00 /* Images.xcassets */,
 				E4BD9BAC1A70D83E009ABC00 /* Supporting Files */,
 			);
 			path = FoodPin;
@@ -212,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4BD9BB11A70D83E009ABC00 /* ViewController.swift in Sources */,
+				E4BD9BD11A70E447009ABC00 /* CustomTableViewCell.swift in Sources */,
+				E4BD9BCF1A70D99C009ABC00 /* RestaurantTableViewController.swift in Sources */,
 				E4BD9BAF1A70D83E009ABC00 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
