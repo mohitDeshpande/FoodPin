@@ -32,7 +32,7 @@ class RestaurantTableViewController: UITableViewController {
     var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
     
     override func prefersStatusBarHidden() -> Bool {
-        return true
+        return false
     }
 
     override func viewDidLoad() {
@@ -82,6 +82,7 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Create an option menu as action sheet
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .ActionSheet)
@@ -114,6 +115,7 @@ class RestaurantTableViewController: UITableViewController {
         // Deselect the row after task is done
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    */
     
     //add the swipe to delete functionality
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -200,14 +202,23 @@ class RestaurantTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let destinationController = segue.destinationViewController as DetailViewController
+                destinationController.restaurantImage = self.restaurantImages[indexPath.row]
+                destinationController.restaurantName = self.restaurantNames[indexPath.row]
+                destinationController.restaurantType = self.restaurantTypes[indexPath.row]
+                destinationController.restaurantLocation = self.restaurantLocations[indexPath.row]
+            }
+        }
     }
-    */
+    
 
 }

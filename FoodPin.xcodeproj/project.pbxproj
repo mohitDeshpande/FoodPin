@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4BA62651A72115500B21CCC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA62641A72115500B21CCC /* DetailViewController.swift */; };
+		E4BA62691A7221EF00B21CCC /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA62681A7221EF00B21CCC /* NavigationViewController.swift */; };
 		E4BD9BAF1A70D83E009ABC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BAE1A70D83E009ABC00 /* AppDelegate.swift */; };
 		E4BD9BB41A70D83E009ABC00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9BB21A70D83E009ABC00 /* Main.storyboard */; };
 		E4BD9BB61A70D83E009ABC00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4BD9BB51A70D83E009ABC00 /* Images.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4BA62641A72115500B21CCC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E4BA62681A7221EF00B21CCC /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		E4BD9BA91A70D83E009ABC00 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BD9BAD1A70D83E009ABC00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BD9BAE1A70D83E009ABC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,10 +86,12 @@
 				E4BD9BAE1A70D83E009ABC00 /* AppDelegate.swift */,
 				E4BD9BCE1A70D99C009ABC00 /* RestaurantTableViewController.swift */,
 				E4BD9BD01A70E447009ABC00 /* CustomTableViewCell.swift */,
+				E4BA62641A72115500B21CCC /* DetailViewController.swift */,
 				E4BD9BB21A70D83E009ABC00 /* Main.storyboard */,
 				E4BD9BB71A70D83E009ABC00 /* LaunchScreen.xib */,
 				E4BD9BB51A70D83E009ABC00 /* Images.xcassets */,
 				E4BD9BAC1A70D83E009ABC00 /* Supporting Files */,
+				E4BA62681A7221EF00B21CCC /* NavigationViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -218,6 +224,8 @@
 				E4BD9BD11A70E447009ABC00 /* CustomTableViewCell.swift in Sources */,
 				E4BD9BCF1A70D99C009ABC00 /* RestaurantTableViewController.swift in Sources */,
 				E4BD9BAF1A70D83E009ABC00 /* AppDelegate.swift in Sources */,
+				E4BA62691A7221EF00B21CCC /* NavigationViewController.swift in Sources */,
+				E4BA62651A72115500B21CCC /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,7 @@
 				E4BD9BCA1A70D83E009ABC00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4BD9BCB1A70D83E009ABC00 /* Build configuration list for PBXNativeTarget "FoodPinTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +426,7 @@
 				E4BD9BCD1A70D83E009ABC00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
