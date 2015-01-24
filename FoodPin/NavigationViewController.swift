@@ -14,6 +14,9 @@ class NavigationViewController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let barFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 22.0) {
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSFontAttributeName:barFont]
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,9 +24,9 @@ class NavigationViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+   // override func preferredStatusBarStyle() -> UIStatusBarStyle {
+   //     return UIStatusBarStyle.LightContent
+   // }
     
 
     
