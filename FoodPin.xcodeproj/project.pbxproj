@@ -18,6 +18,7 @@
 		E4BD9BC51A70D83E009ABC00 /* FoodPinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BC41A70D83E009ABC00 /* FoodPinTests.swift */; };
 		E4BD9BCF1A70D99C009ABC00 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BCE1A70D99C009ABC00 /* RestaurantTableViewController.swift */; };
 		E4BD9BD11A70E447009ABC00 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD9BD01A70E447009ABC00 /* CustomTableViewCell.swift */; };
+		E4EBE80A1A84D340009F49D2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EBE8091A84D340009F49D2 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E4BD9BC41A70D83E009ABC00 /* FoodPinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinTests.swift; sourceTree = "<group>"; };
 		E4BD9BCE1A70D99C009ABC00 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		E4BD9BD01A70E447009ABC00 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E4EBE8091A84D340009F49D2 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				E4BD9BD01A70E447009ABC00 /* CustomTableViewCell.swift */,
 				E4BA62641A72115500B21CCC /* DetailViewController.swift */,
 				E4555B1B1A73821000FEDD35 /* DetailTableViewCell.swift */,
+				E4EBE8091A84D340009F49D2 /* ReviewViewController.swift */,
 				E4BD9BB21A70D83E009ABC00 /* Main.storyboard */,
 				E4BD9BB71A70D83E009ABC00 /* LaunchScreen.xib */,
 				E4BD9BB51A70D83E009ABC00 /* Images.xcassets */,
@@ -233,6 +236,7 @@
 				E4555B1A1A737A7100FEDD35 /* Restaurant.swift in Sources */,
 				E4BD9BAF1A70D83E009ABC00 /* AppDelegate.swift in Sources */,
 				E4BA62691A7221EF00B21CCC /* NavigationViewController.swift in Sources */,
+				E4EBE80A1A84D340009F49D2 /* ReviewViewController.swift in Sources */,
 				E4BA62651A72115500B21CCC /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
