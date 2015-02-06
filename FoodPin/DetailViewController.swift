@@ -34,6 +34,10 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         // set title of navigation bar
         self.navigationItem.title = restaurant.name
+        
+        // Enable Self Sizing Cells
+        tableView.estimatedRowHeight = 320.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool) {
