@@ -12,6 +12,7 @@ class DetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fieldLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet var mapButton: UIButton!
     
 
     override func awakeFromNib() {

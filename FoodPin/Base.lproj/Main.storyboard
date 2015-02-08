@@ -118,7 +118,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqR-50-ATi">
-                                                    <rect key="frame" x="9" y="9" width="82" height="17"/>
+                                                    <rect key="frame" x="9" y="11" width="82" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="jJ5-db-XlD"/>
                                                     </constraints>
@@ -127,28 +127,45 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ski-Pj-X1B">
-                                                    <rect key="frame" x="99" y="8" width="213" height="18"/>
+                                                    <rect key="frame" x="99" y="10" width="157" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="213" id="4QX-zM-4rD"/>
+                                                        <constraint firstAttribute="width" constant="157" id="4QX-zM-4rD"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwL-3b-de5">
+                                                    <rect key="frame" x="264" y="7" width="40" height="21"/>
+                                                    <color key="backgroundColor" red="0.8666666666666667" green="0.38823529411764707" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                                    <state key="normal" title="Map">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="nTJ-wb-5Zg" kind="push" identifier="showMap" id="RhU-Me-QXh"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ski-Pj-X1B" firstAttribute="trailing" secondItem="JzL-Xq-c2s" secondAttribute="trailingMargin" id="9eL-9h-KUA"/>
-                                                <constraint firstItem="eqR-50-ATi" firstAttribute="top" secondItem="JzL-Xq-c2s" secondAttribute="topMargin" constant="1" id="Fem-WW-B2Y"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ski-Pj-X1B" secondAttribute="bottom" constant="1" id="IN2-c4-ksB"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="eqR-50-ATi" secondAttribute="bottom" constant="1" id="Z3U-x0-D3E"/>
+                                                <constraint firstItem="KwL-3b-de5" firstAttribute="top" secondItem="JzL-Xq-c2s" secondAttribute="topMargin" constant="-1" id="8Wf-Bo-vzh"/>
+                                                <constraint firstItem="ski-Pj-X1B" firstAttribute="trailing" secondItem="JzL-Xq-c2s" secondAttribute="trailingMargin" constant="-56" id="9eL-9h-KUA"/>
+                                                <constraint firstItem="eqR-50-ATi" firstAttribute="top" secondItem="JzL-Xq-c2s" secondAttribute="topMargin" constant="3" id="Fem-WW-B2Y"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ski-Pj-X1B" secondAttribute="bottom" constant="2" id="IN2-c4-ksB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KwL-3b-de5" secondAttribute="trailing" constant="8" id="IQ5-Zi-yhf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eqR-50-ATi" secondAttribute="bottom" constant="2" id="Z3U-x0-D3E"/>
                                                 <constraint firstItem="eqR-50-ATi" firstAttribute="leading" secondItem="JzL-Xq-c2s" secondAttribute="leadingMargin" constant="1" id="bZ1-nv-Vea"/>
+                                                <constraint firstItem="KwL-3b-de5" firstAttribute="leading" secondItem="ski-Pj-X1B" secondAttribute="trailing" constant="8" id="gns-sp-qne"/>
                                                 <constraint firstItem="ski-Pj-X1B" firstAttribute="leading" secondItem="eqR-50-ATi" secondAttribute="trailing" constant="8" id="kuH-Pc-86e"/>
-                                                <constraint firstItem="ski-Pj-X1B" firstAttribute="top" secondItem="JzL-Xq-c2s" secondAttribute="topMargin" id="nOr-c1-yMi"/>
+                                                <constraint firstItem="ski-Pj-X1B" firstAttribute="top" secondItem="JzL-Xq-c2s" secondAttribute="topMargin" constant="2" id="nOr-c1-yMi"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KwL-3b-de5" secondAttribute="bottom" constant="-1" id="qJj-gf-rhq"/>
                                                 <constraint firstItem="ski-Pj-X1B" firstAttribute="leading" secondItem="eqR-50-ATi" secondAttribute="trailing" constant="8" id="r7C-Ym-Oz5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="fieldLabel" destination="eqR-50-ATi" id="i3U-Jt-RZ9"/>
+                                            <outlet property="mapButton" destination="KwL-3b-de5" id="ZTa-jQ-KaZ"/>
                                             <outlet property="valueLabel" destination="ski-Pj-X1B" id="zat-ms-BjU"/>
                                         </connections>
                                     </tableViewCell>
@@ -196,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZsG-7e-bex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="335"/>
+            <point key="canvasLocation" x="921" y="335"/>
         </scene>
         <!--Share View Controller-->
         <scene sceneID="EpI-de-JT4">
@@ -289,7 +306,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2Q-xM-6bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ze7-T1-yCA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="42"/>
+            <point key="canvasLocation" x="1356" y="-2"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="arb-Xw-J2N">
+            <objects>
+                <viewController id="nTJ-wb-5Zg" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Car-63-OBs"/>
+                        <viewControllerLayoutGuide type="bottom" id="wxV-9u-v12"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qeo-z0-baM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEs-fl-Ehq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h5q-v3-pPm"/>
+                    <connections>
+                        <outlet property="mapView" destination="sEs-fl-Ehq" id="N9w-gG-rTW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1P-IM-cNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="335"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="VdI-EQ-Ieh">
@@ -406,7 +450,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiW-gS-GQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vbY-pn-BAB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="672"/>
+            <point key="canvasLocation" x="1356" y="694"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="BWu-1P-EqV">
