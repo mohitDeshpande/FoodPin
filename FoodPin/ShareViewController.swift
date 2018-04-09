@@ -22,33 +22,33 @@ class ShareViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
         // apply initial transforms for animation
-        facebookButton.transform = CGAffineTransformMakeTranslation(0, 500)
-        emailButton.transform = CGAffineTransformMakeTranslation(0, 500)
-        twitterButton.transform = CGAffineTransformMakeTranslation(0, -700)
-        messageButton.transform = CGAffineTransformMakeTranslation(0, -700)
+        facebookButton.transform = CGAffineTransform(translationX: 0, y: 500)
+        emailButton.transform = CGAffineTransform(translationX: 0, y: 500)
+        twitterButton.transform = CGAffineTransform(translationX: 0, y: -700)
+        messageButton.transform = CGAffineTransform(translationX: 0, y: -700)
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        UIButton.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: nil, animations: {
-            
-            self.facebookButton.transform = CGAffineTransformMakeTranslation(0, 0)
-            self.emailButton.transform = CGAffineTransformMakeTranslation(0, 0)
-            
-        }, completion: nil)
-        
-        UIView.animateWithDuration(0.7, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: nil, animations: {
-            
-            self.twitterButton.transform = CGAffineTransformMakeTranslation(0, 0)
-            self.messageButton.transform = CGAffineTransformMakeTranslation(0, 0)
-            
-            }, completion: nil)
+    override func viewDidAppear(_ animated: Bool) {
+//        UIButton.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: nil, animations: {
+//            
+//            self.facebookButton.transform = CGAffineTransformMakeTranslation(0, 0)
+//            self.emailButton.transform = CGAffineTransformMakeTranslation(0, 0)
+//            
+//        }, completion: nil)
+//        
+//        UIView.animateWithDuration(0.7, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: nil, animations: {
+//            
+//            self.twitterButton.transform = CGAffineTransformMakeTranslation(0, 0)
+//            self.messageButton.transform = CGAffineTransformMakeTranslation(0, 0)
+//            
+//            }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

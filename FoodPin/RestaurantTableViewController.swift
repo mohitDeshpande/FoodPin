@@ -35,7 +35,7 @@ class RestaurantTableViewController: UITableViewController {
         ]
 
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return false
     }
 
@@ -54,7 +54,7 @@ class RestaurantTableViewController: UITableViewController {
             
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.hidesBarsOnSwipe = true
@@ -67,22 +67,22 @@ class RestaurantTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.restaurants.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomTableViewCell
 
         // Configure the cell...
         cell.nameLabel.text = self.restaurants[indexPath.row].name
@@ -133,47 +133,47 @@ class RestaurantTableViewController: UITableViewController {
     */
     
     //add the swipe to delete functionality
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .Delete {
+        if editingStyle == .delete {
             //Delete the row from the data source
-            self.restaurants.removeAtIndex(indexPath.row)
+            self.restaurants.remove(at: indexPath.row)
             
             // finally delete that particular row
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
 
     }
     
     // add swipe actions for the table
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        var shareAction = UITableViewRowAction(style: .Default, title: "Share", handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-                let shareMenu = UIAlertController(title: nil, message: "Share Using", preferredStyle: .ActionSheet)
-                let twitterAction = UIAlertAction(title: "Twitter", style: .Default, handler: nil)
-                let facebookAction = UIAlertAction(title: "Facebook", style: .Default, handler: nil)
-                let emailAction = UIAlertAction(title: "Email", style: .Default, handler: nil)
-                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            
-                shareMenu.addAction(twitterAction)
-                shareMenu.addAction(facebookAction)
-                shareMenu.addAction(emailAction)
-                shareMenu.addAction(cancelAction)
-            
-                self.presentViewController(shareMenu, animated: true, completion: nil)
-        })
-    
-        var deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
-            //Delete the row from the data source
-            self.restaurants.removeAtIndex(indexPath.row)
-            
-            // finally delete that particular row
-            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        })
-        
-        shareAction.backgroundColor = UIColor(red: 255.0/255.0, green: 166.0/255.0, blue: 51.0/255.0, alpha: 1.0)
-        
-        return [deleteAction, shareAction]
-    }
+//    override func tableView(_ tableView: UITableView, editActionsForRowAtIndexPath indexPath: IndexPath) -> [AnyObject]? {
+//        let shareAction = UITableViewRowAction(style: .default, title: "Share", handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
+//                let shareMenu = UIAlertController(title: nil, message: "Share Using", preferredStyle: .actionSheet)
+//                let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: nil)
+//                let facebookAction = UIAlertAction(title: "Facebook", style: .default, handler: nil)
+//                let emailAction = UIAlertAction(title: "Email", style: .default, handler: nil)
+//                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//            
+//                shareMenu.addAction(twitterAction)
+//                shareMenu.addAction(facebookAction)
+//                shareMenu.addAction(emailAction)
+//                shareMenu.addAction(cancelAction)
+//            
+//                self.present(shareMenu, animated: true, completion: nil)
+//        })
+//    
+//        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
+//            //Delete the row from the data source
+//            self.restaurants.remove(at: indexPath.row)
+//            
+//            // finally delete that particular row
+//            self.tableView.deleteRows(at: [indexPath], with: .fade)
+//        })
+//        
+//        shareAction.backgroundColor = UIColor(red: 255.0/255.0, green: 166.0/255.0, blue: 51.0/255.0, alpha: 1.0)
+//        
+//        return [deleteAction, shareAction]
+//    }
 
     
     /*
@@ -215,12 +215,12 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "showRestaurantDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let destinationController = segue.destinationViewController as DetailViewController
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! DetailViewController
                 destinationController.restaurant = self.restaurants[indexPath.row]
             }
         }
