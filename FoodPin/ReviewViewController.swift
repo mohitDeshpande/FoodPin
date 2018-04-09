@@ -18,15 +18,15 @@ class ReviewViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         // add blur effect
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
         // apply initial transforms for animation
-        let scale = CGAffineTransformMakeScale(0.0, 0.0)
-        let translate = CGAffineTransformMakeTranslation(0, 500)
-        dialogView.transform = CGAffineTransformConcat(scale, translate)
+        let scale = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        let translate = CGAffineTransform(translationX: 0, y: 500)
+        dialogView.transform = scale.concatenating(translate)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,17 +35,17 @@ class ReviewViewController: UIViewController {
     }
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         // create the animation effect of the dialogView
-        UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: nil, animations: {
-            
-            let scale = CGAffineTransformMakeScale(1, 1)
-            let translate = CGAffineTransformMakeTranslation(0, 0)
-            self.dialogView.transform = CGAffineTransformConcat(scale, translate)
-            
-        }, completion: nil)
-    
+//        UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: nil, animations: {
+//            
+//            let scale = CGAffineTransformMakeScale(1, 1)
+//            let translate = CGAffineTransformMakeTranslation(0, 0)
+//            self.dialogView.transform = CGAffineTransformConcat(scale, translate)
+//            
+//        }, completion: nil)
+//    
     }
     
 

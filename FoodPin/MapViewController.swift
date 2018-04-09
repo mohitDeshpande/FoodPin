@@ -27,18 +27,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
             if error != nil {
-                println(error)
+                print(error)
                 return
             }
             
-            if placemarks != nil && placemarks.count > 0 {
-                let placemark = placemarks[0] as CLPlacemark
+            if placemarks != nil && (placemarks?.count)! > 0 {
+                let placemark = placemarks![0] as CLPlacemark
                 
                 // Add Annotation
                 let annotation = MKPointAnnotation()
                 annotation.title = self.restaurant.name
                 annotation.subtitle = self.restaurant.type
-                annotation.coordinate = placemark.location.coordinate
+                annotation.coordinate = (placemark.location?.coordinate)!
                 
                 self.mapView.showAnnotations([annotation], animated: true)
                 self.mapView.selectAnnotation(annotation, animated: true)
@@ -50,21 +50,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         let identifier = "MyPin"
         
-        if annotation.isKindOfClass(MKUserLocation) {
+        if annotation.isKind(of: MKUserLocation) {
             return nil
         }
         
         // Reuse the annotation if possible
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView.canShowCallout = true
+            annotationView?.canShowCallout = true
         }
         
-        let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
+        //let leftIconView = UIImageView(frame: CG(0, 0, 53, 53))
+        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
+
         leftIconView.image = UIImage(named: restaurant.image)
-        annotationView.leftCalloutAccessoryView = leftIconView
+        annotationView?.leftCalloutAccessoryView = leftIconView
         
         return annotationView
     }

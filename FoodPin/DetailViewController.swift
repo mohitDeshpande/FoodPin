@@ -23,7 +23,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         //change table view appearance
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         // remove extra seperator from the table view
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         //change color of the seperator
         self.tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1)
     
@@ -40,7 +40,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.hidesBarsOnSwipe = false
@@ -52,15 +52,15 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as DetailTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DetailTableViewCell
         
         // Configure the cell...
-        cell.mapButton.hidden = true
+        cell.mapButton.isHidden = true
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
@@ -71,7 +71,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         case 2:
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
-            cell.mapButton.hidden = false
+            cell.mapButton.isHidden = false
         case 3:
             cell.fieldLabel.text = "Been Here"
             cell.valueLabel.text = restaurant.isVisited ? "Yes, I've been here before" : "No"
@@ -79,12 +79,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clear
         
         return cell
     }
     
-    @IBAction func close(segue: UIStoryboardSegue) {
+    @IBAction func close(_ segue: UIStoryboardSegue) {
     
     }
     
@@ -95,11 +95,11 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showMap" {
-            let destinationController = segue.destinationViewController as MapViewController
+            let destinationController = segue.destination as! MapViewController
             destinationController.restaurant = restaurant
         }
     }
