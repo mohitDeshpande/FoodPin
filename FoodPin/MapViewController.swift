@@ -50,7 +50,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         let identifier = "MyPin"
         
-        if annotation.isKind(of: MKUserLocation) {
+        if annotation.isKind(of: MKUserLocation.self) {
             return nil
         }
         
