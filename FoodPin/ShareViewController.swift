@@ -28,10 +28,10 @@ class ShareViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
         
         // apply initial transforms for animation
-        facebookButton.transform = CGAffineTransform(translationX: 0, y: 500)
-        emailButton.transform = CGAffineTransform(translationX: 0, y: 500)
-        twitterButton.transform = CGAffineTransform(translationX: 0, y: -700)
-        messageButton.transform = CGAffineTransform(translationX: 0, y: -700)
+//        facebookButton.transform = CGAffineTransform(translationX: 0, y: 500)
+//        emailButton.transform = CGAffineTransform(translationX: 0, y: 500)
+//        twitterButton.transform = CGAffineTransform(translationX: 0, y: -700)
+//        messageButton.transform = CGAffineTransform(translationX: 0, y: -700)
         
     }
     

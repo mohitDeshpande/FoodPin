@@ -24,9 +24,9 @@ class ReviewViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
         
         // apply initial transforms for animation
-        let scale = CGAffineTransform(scaleX: 0.0, y: 0.0)
-        let translate = CGAffineTransform(translationX: 0, y: 500)
-        dialogView.transform = scale.concatenating(translate)
+//        let scale = CGAffineTransform(scaleX: 0.0, y: 0.0)
+//        let translate = CGAffineTransform(translationX: 0, y: 500)
+//        dialogView.transform = scale.concatenating(translate)
     }
 
     override func didReceiveMemoryWarning() {
