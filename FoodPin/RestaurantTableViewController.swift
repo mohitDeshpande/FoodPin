@@ -78,7 +78,41 @@ class RestaurantTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return self.restaurants.count
     }
-
+    func getRestaurants()-> [Restaurant]{
+        let headers = [
+            "Authorization": "Bearer YEXFXXvgjj01-tx8I-gaGmycaJCY-bryGRKY6UtW66o6QmtaclkmkgP9ZFSqZsP8OKQjCbhh8drrD7EX3X8aotUTqKosLxJs2tWZZuiwR-P4n-G43dNC2LndjkfeWnYx",
+            "Cache-Control": "no-cache",
+            "Postman-Token": "6b19d7c5-1a5c-4b4b-8de6-8ed79fd0ba11"
+        ]
+        var restaurants=[Restaurant]()
+        let url = URL(string: "https://api.yelp.com/v3/businesses/search?location=toronto&limit=50")!
+        var request=URLRequest(url:url);
+        request.allHTTPHeaderFields=headers
+        let task = URLSession.shared.dataTask(with: request){(data,response,error) in
+            
+            if error != nil {
+                print(error!)
+            }else{
+                if let urlContent = data {
+                    do {
+                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]]
+                        print(jsonResult!)
+                        
+                        for obj in jsonResult! {
+                            var restaurant=Restaurant(name: obj["name"] as! String, type: obj["categories"][0]["title"] as! String, location: obj["location"]["address1"] as! String,image: obj["image_url"] as! String, isVisited: false)
+                            restaurants.append(restaurant)
+                        }
+                    } catch {
+                        print("JSon processing Failed")
+                    }
+                    
+                }
+            }
+        }
+        task.resume()
+        
+        return restaurants;
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
